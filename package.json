@@ -6,7 +6,7 @@
   "name": "login-lecture3",
   "version": "1.0.0",
   "main": "app.js",
-  "bin": {
+  "bin": { 
     "login-lecture3": "bin/www.js"
   },
   "devDependencies": {},

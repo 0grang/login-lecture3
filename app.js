@@ -7,7 +7,7 @@
 //   }else if(req.url ==="/login"){
 //     res.end("여기는 로그인 화면입니다.");
 //   }
-// });
+// }); 
 
 // app.listen(3001,() =>{
 // console.log("http로 기동된 서버입니다. ");
