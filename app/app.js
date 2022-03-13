@@ -23,7 +23,7 @@ const PORT = 3000;
 const home = require("./src/routes/home");
 
 //앱 셋팅
-app.set("views","./views");
+app.set("views","./src/views");
 app.set("view engine","ejs") //views엔진을 ejs를 이용하겠다는 뜻
 
 //아래 라우팅하는 것을 모두 가져가서  routes / home/ indexedDB.js로 이동
