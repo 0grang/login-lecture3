@@ -15,7 +15,8 @@
 
 //express서버로 띄우기
 //모듈
-const express = require("express")
+const express = require("express");
+const bodyParser = require("body-parser");
 const app = express();
 const PORT = 3000;
 
@@ -26,14 +27,16 @@ const home = require("./src/routes/home");
 app.set("views","./src/views");
 app.set("view engine","ejs") //views엔진을 ejs를 이용하겠다는 뜻
 app.use(express.static(`${__dirname}/src/public`));
-
+app.use(bodyParser.json());
+//url을 통해 전달되는 데이터에 한글, 공백 등과 같은 문자가 포함될 경우 제대로 인식되지 않는 문제 해결. - extended를 true로 해주면 됨.
+app.use(bodyParser.urlencoded({extended:true}));
 
 //아래 라우팅하는 것을 모두 가져가서  routes / home/ indexedDB.js로 이동
 // app.get("/",(req,res)=>{
 //   //루트로 들어오면 아래와 같은 기능을 동작하겠음.
 //   res.render("home/index");// 루트로 들어왔을때 이동할 곳
 // });//경로 만들기
-
+                                           
 // app.get("/login",(req,res)=>{
 //   res.send("home/login");
 // });
